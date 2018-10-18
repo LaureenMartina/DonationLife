@@ -3,7 +3,10 @@ import { Component } from '@angular/core';
 import { AboutPage } from '../about/about';
 import { HomePage } from '../home/home';
 import { MapsPage } from '../maps/maps';
-
+//import { CalendarPage } from '../calendar/calendar';
+//import { Geolocalisation } from '../geolocalisation/geolocalisation';
+import { LocationPage } from '../location/location';
+import { ProfilPage } from '../profil/profil';
 
 @Component({
   selector: 'page-tabs',
@@ -15,13 +18,17 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab2Root = AboutPage;
-  //tab3Root = CalendarPage;
-  //tab4Root = GeolocalisationPage;
+  tab3Root = ProfilPage;
+  tab4Root = LocationPage;
   tab5Root = MapsPage;
-  //tab6Root = Logout;
+  // tab6Root = LogoutPage;
 
   constructor() {
 
   }
-  
+
+  logout(){
+    console.log("logout");
+  }
+
 }

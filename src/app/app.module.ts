@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Toast } from '@ionic-native/toast';
 
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
@@ -12,6 +13,8 @@ import { LoginPage } from '../pages/login/login';
 import { MapsPage } from '../pages/maps/maps';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { ErrorModalPage } from '../pages/error-modal/error-modal';
+import { LocationPage } from '../pages/location/location';
+import { ProfilPage } from '../pages/profil/profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,7 +39,9 @@ import { DataService } from '../services/dataService';
     InformModalPage,
     LoginPage,
     MapsPage,
-    ErrorModalPage
+    ErrorModalPage,
+    LocationPage,
+    ProfilPage
   ],
   imports: [
     HttpClientModule,
@@ -54,7 +59,9 @@ import { DataService } from '../services/dataService';
     InformModalPage,
     LoginPage,
     MapsPage,
-    ErrorModalPage
+    ErrorModalPage,
+    LocationPage,
+    ProfilPage
   ],
   providers: [
     StatusBar,
@@ -65,6 +72,7 @@ import { DataService } from '../services/dataService';
     UserService,
     Config,
     DataService,
+    Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

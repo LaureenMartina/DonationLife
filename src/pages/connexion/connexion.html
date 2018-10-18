@@ -1,6 +1,6 @@
 <ion-content>
     <div id="already">
-        <p>Déjà Bénévole</p>
+        <h1>Déjà Bénévole</h1>
     </div>
     <ion-list padding>
         <ion-item>
@@ -9,14 +9,12 @@
         </ion-item>
 
         <ion-item>
-            <ion-label fixed>Password</ion-label>
+            <ion-label fixed text-wrap>Mot de passe</ion-label>
             <ion-input [(ngModel)]="password" type="password" minlength="6"></ion-input>
         </ion-item>
     </ion-list>
-    <div id="btn-connect">
-        <button id="b_connect" ion-button color="danger" round>Connexion</button>
-    </div>
     <button ion-button icon-only (click)="backToHome()">
         <ion-icon name="arrow-back"></ion-icon>
     </button>
+    <button class="btn-connect" ion-button color="danger" round>Connexion</button>
 </ion-content>

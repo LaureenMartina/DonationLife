@@ -17,7 +17,7 @@ export class AuthentificationService{
 
     public sign(user: User) : Promise<any>{
         return new Promise((resolve , reject) => {
-            this.http.post(`${this.config.url}/authentication/sign`, user)
+            this.http.post(`${this.config.url}/authentication/sign`, {user})
             .subscribe(
                 (item: any) => resolve(item as DataResponse),
                 (err: any) => reject(err as ErrorResponse)
