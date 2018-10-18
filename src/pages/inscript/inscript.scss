@@ -1,3 +1,18 @@
 page-inscript {
+    #become {
+        display: inline-block;
+        width: 100%;
+        background-color:antiquewhite;
+        padding: 0;
+        height: 10%;
 
+        p {
+            text-align: center;
+        }
+    }
+
+    #b_validerInscrip {
+        width: 80%;
+        text-align: center;
+    }
 }
