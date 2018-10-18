@@ -1,4 +1,16 @@
 page-inform-modal {
   text-align: justify;
   text-justify: inter-word;
+
+  ion-card-title{
+    text-align: center;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  p {
+    padding-bottom: 1%;
+  }
 }
