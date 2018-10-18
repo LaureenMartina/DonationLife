@@ -1,4 +1,7 @@
 <ion-content>
+  <div id="become">
+        <p>Devenir Bénévole</p>
+  </div>
   <ion-list>
       <ion-item>
         <ion-label fixed>Prénom</ion-label>
@@ -26,12 +29,12 @@
       </ion-item>
 
       <ion-item>
-          <ion-label>Mois</ion-label>
+          <!--<ion-label>Mois</ion-label>
           <ion-select [(ngModel)]="monthSelected">
             <span *ngFor="let month of ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']">
               <ion-option value="{{month}}">{{month}}</ion-option>
             </span>
-          </ion-select>
+          </ion-select>-->
           <ion-label>Année</ion-label>
           <ion-select [(ngModel)]="yearSelected">
               <ion-option *ngFor="let year of years" value="{{year}}">{{year}}</ion-option>
@@ -80,6 +83,9 @@
       </ion-item>
     
   
+      <button ion-button icon-only (click)="backToHome()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </button>
       <button ion-button color="danger" id="b_validerInscrip" round (click)="validateInscript()">Valider</button>
       </ion-list>
 </ion-content>

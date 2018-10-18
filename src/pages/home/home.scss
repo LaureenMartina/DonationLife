@@ -47,6 +47,7 @@ page-home {
         position: absolute;
         bottom: 38px;
         left: 40px;
+        height: 60px;
         color: white !important;
     }
 
@@ -54,6 +55,14 @@ page-home {
         position: absolute;
         bottom: 130px;
         right: 20px;
+        height: 60px;
         color: white !important;
+    }
+
+    #hand{
+        position: absolute;
+        width: 45%;
+        bottom: 35px;
+        left: 200px;
     }
 }

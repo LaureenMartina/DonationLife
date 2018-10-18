@@ -1,19 +1,22 @@
 <ion-content>
-    <div id="become">
-        <p>Devenir Bénévole</p>
+    <div id="already">
+        <p>Déjà Bénévole</p>
     </div>
     <ion-list padding>
         <ion-item>
             <ion-label fixed>Email</ion-label>
-            <ion-input [(ngModel)]="email" type="text" value=""></ion-input>
+            <ion-input [(ngModel)]="email" type="text" value="" minlength="3"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label fixed>Password</ion-label>
-            <ion-input [(ngModel)]="password" type="password"></ion-input>
+            <ion-input [(ngModel)]="password" type="password" minlength="6"></ion-input>
         </ion-item>
     </ion-list>
     <div id="btn-connect">
         <button id="b_connect" ion-button color="danger" round>Connexion</button>
     </div>
+    <button ion-button icon-only (click)="backToHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+    </button>
 </ion-content>

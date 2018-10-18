@@ -64,4 +64,8 @@ export class InscriptPage {
         });
   }
 
+  backToHome() {
+    this.navCtrl.push(HomePage);
+  }
+
 }
