@@ -6,12 +6,12 @@ page-connexion {
         padding: 0;
         height: 10%;
 
-        p {
+        p, h1 {
             text-align: center;
         }
     }
     
-    #btn-connect {
+    .btn-connect {
         width: 80%;
         text-align: center;
     }
