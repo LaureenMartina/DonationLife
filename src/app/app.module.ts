@@ -11,6 +11,9 @@ import { InformModalPage } from '../pages/inform-modal/inform-modal';
 import { LoginPage } from '../pages/login/login';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { ErrorModalPage } from '../pages/error-modal/error-modal';
+import { LocationPage } from '../pages/location/location';
+import { ProfilPage } from '../pages/profil/profil';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +28,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ConnexionPage,
     InformModalPage,
     LoginPage,
-    ErrorModalPage
+    ErrorModalPage,
+    LocationPage,
+    ProfilPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ConnexionPage,
     InformModalPage,
     LoginPage,
-    ErrorModalPage
+    ErrorModalPage,
+    LocationPage,
+    ProfilPage
   ],
   providers: [
     StatusBar,
