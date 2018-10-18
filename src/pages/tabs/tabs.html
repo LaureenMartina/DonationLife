@@ -4,6 +4,6 @@
   <ion-tab id="info" [root]="tab2Root" tabIcon="information-circle" ng-if="isSelected"></ion-tab>
   <ion-tab id="calendar" [root]="tab4Root" tabIcon="calendar" ng-if="isSelected"></ion-tab>
   <ion-tab id="gps" [root]="tab5Root" tabIcon="pin" ng-if="isSelected"></ion-tab>
-  <ion-tab id="logout" [root]="tab7Root" tabIcon="log-out" ng-if="isSelected"></ion-tab>
+  <ion-tab id="logout" [root]="tab7Root" (click)="logout()" tabIcon="log-out" ng-if="isSelected"></ion-tab>
 
 </ion-tabs>

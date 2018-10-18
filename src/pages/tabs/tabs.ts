@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { HomePage } from '../home/home';
+import { LogoutPage } from '../logout/logout';
 //import { CalendarPage } from '../calendar/calendar';
 //import { Geolocalisation } from '../geolocalisation/geolocalisation';
 
@@ -18,10 +19,10 @@ export class TabsPage {
   tab2Root = AboutPage;
   //tab3Root = CalendarPage;
   //tab4Root = GeolocalisationPage;
-  //tab5Root = Logout;
+  tab5Root = LogoutPage;
 
   constructor() {
 
   }
-  
+
 }
