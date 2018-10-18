@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Calendar } from '@ionic-native/calendar';
+import { InAppBrowser , InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the CalendarComponent component.
@@ -11,39 +12,53 @@ import { Calendar } from '@ionic-native/calendar';
   selector: 'calendar',
   templateUrl: 'calendar.html'
 })
+
 export class CalendarComponent {
 
   text: string;
+  options: InAppBrowserOptions = {
+    location: 'yes',//Or 'no' 
+    hidden: 'no', //Or  'yes'
+    clearcache: 'yes',
+    clearsessioncache: 'yes',
+    zoom: 'yes',//Android only ,shows browser zoom controls 
+    hardwareback: 'yes',
+    mediaPlaybackRequiresUserAction: 'no',
+    shouldPauseOnSuspend: 'no', //Android only 
+    closebuttoncaption: 'Close', //iOS only
+    disallowoverscroll: 'no', //iOS only 
+    toolbar: 'yes', //iOS only 
+    enableViewportScale: 'no', //iOS only 
+    allowInlineMediaPlayback: 'no',//iOS only 
+    presentationstyle: 'pagesheet',//iOS only 
+    fullscreen: 'yes',//Windows only    
+  };
 
-  constructor(private calendar: Calendar) {
+  notifyTime: any;
+  notifications: any[] = [];
+  days: any[];
+  chosenHours: number;
+  chosenMinutes: number;
+
+  constructor(private calendar: Calendar, private theInAppBrowser: InAppBrowser) {
     console.log('Hello CalendarComponent Component');
     this.text = 'Hello World';
   }
 
-  openCalendar(){
-    this.calendar.openCalendar(new Date()).then(
-        (msg) => { console.log(msg); },
-        (err) => { console.log(err); }
-    );
+  public openWithSystemBrowser(url: string) {
+    let target = "_system";
+    this.theInAppBrowser.create(url, target, this.options);
   }
-
-  addEvent(){
-    return this.calendar.createEventInteractively("event title");
+  public openWithInAppBrowser(url: string) {
+    let target = "_blank";
+    this.theInAppBrowser.create(url, target, this.options);
   }
-  scheduleEvents(){
-      this.calendar.hasReadWritePermission().then((result)=>{
-      if(result === false){
-          this.calendar.requestReadWritePermission().then((v)=>{
-              this.addEvent();
-          },(r)=>{
-              console.log("Rejected");
-          })
-      }
-      else
-      {
-          this.addEvent();
-      }
-      });
-    }   
+  public openWithCordovaBrowser(url: string) {
+    let target = "_self";
+    this.theInAppBrowser.create(url, target, this.options);
+  }
 
 }
+
+
+

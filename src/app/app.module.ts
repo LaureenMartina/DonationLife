@@ -10,11 +10,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { InscriptPage } from '../pages/inscript/inscript';
 import { InformPage } from '../pages/inform/inform';
 import { LoginPage } from '../pages/login/login';
+import { CalendarComponent } from '../components/calendar/calendar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Calendar } from '@ionic-native/calendar';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { Calendar } from '@ionic-native/calendar';
     TabsPage,
     InscriptPage,
     InformPage,
-    LoginPage
+    LoginPage,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,12 +44,15 @@ import { Calendar } from '@ionic-native/calendar';
     TabsPage,
     InscriptPage,
     InformPage,
-    LoginPage
+    LoginPage,
+    CalendarComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Calendar,
+    InAppBrowser,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
