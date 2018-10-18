@@ -1,1 +1,39 @@
-<button ion-button (click)="openWithSystemBrowser('https://teamup.com/kspodj27ma4p2vsros%27)%22%3E')">Open with System browser</button>
+<ion-header>
+    <ion-navbar>
+         <ion-title>
+            Evénements
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col id="head" col-12>
+                <img src="assets/imgs/cal.png" id="cal">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <div>
+                    <button ion-button id="link" icon-start (click)="openWithSystemBrowser('https://teamup.com/kspodj27ma4p2vsros%27)%22%3E')" round>
+                        <ion-icon name="calendar"></ion-icon>
+                        Ouvrir Team Calendar
+                    </button>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <div id="text">
+                    <p>
+                        <b>TeamUp</b> est un site permettant d'ajouter des événements à un calendrier
+                        <br><br>
+                        En tant qu'administrateur, vous avez tous les droits d'accès !
+                        Nous espèrons que ce service vous conviendra - Team Donation' Life
+                    </p>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
