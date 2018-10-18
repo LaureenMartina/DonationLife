@@ -10,9 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { InscriptPage } from '../pages/inscript/inscript';
 import { InformModalPage } from '../pages/inform-modal/inform-modal';
 import { LoginPage } from '../pages/login/login';
+import { MapsPage } from '../pages/maps/maps';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     InscriptPage,
     InformModalPage,
-    LoginPage
+    LoginPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -38,11 +41,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     InscriptPage,
     InformModalPage,
-    LoginPage
+    LoginPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
