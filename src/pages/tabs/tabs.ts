@@ -4,6 +4,7 @@ import { AboutPage } from '../about/about';
 import { HomePage } from '../home/home';
 import { LocationPage } from '../location/location';
 import { ProfilPage } from '../profil/profil';
+import { CalendarComponent } from '../../components/calendar/calendar';
 
 
 @Component({
@@ -17,9 +18,8 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ProfilPage;
-  tab4Root = LocationPage;
-  //tab5Root = GeolocalisationPage;
-  //tab6Root = Logout;
+  tab4Root = CalendarComponent;
+  tab5Root = LocationPage;
 
   constructor() {
 

@@ -13,7 +13,9 @@ import { ConnexionPage } from '../pages/connexion/connexion';
 import { ErrorModalPage } from '../pages/error-modal/error-modal';
 import { LocationPage } from '../pages/location/location';
 import { ProfilPage } from '../pages/profil/profil';
+import { CalendarComponent } from '../components/calendar/calendar';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +40,8 @@ import { Toast } from '@ionic-native/toast';
     LoginPage,
     ErrorModalPage,
     LocationPage,
-    ProfilPage
+    ProfilPage,
+    CalendarComponent
   ],
   imports: [
     HttpClientModule,
@@ -57,7 +60,8 @@ import { Toast } from '@ionic-native/toast';
     LoginPage,
     ErrorModalPage,
     LocationPage,
-    ProfilPage
+    ProfilPage,
+    CalendarComponent
   ],
   providers: [
     StatusBar,
@@ -67,6 +71,7 @@ import { Toast } from '@ionic-native/toast';
     UserService,
     Config,
     Toast,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
