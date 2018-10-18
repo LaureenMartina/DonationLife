@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-connexion',
@@ -16,6 +17,10 @@ export class ConnexionPage {
 
   validateConnexion() {
     console.log('hello');
+  }
+
+  backToHome() {
+    this.navCtrl.push(HomePage);
   }
 
 }

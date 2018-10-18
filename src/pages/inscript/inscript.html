@@ -1,4 +1,7 @@
 <ion-content>
+  <div id="become">
+        <p>Devenir Bénévole</p>
+  </div>
   <ion-list>
       <ion-item>
         <ion-label fixed>Prénom</ion-label>
@@ -80,6 +83,9 @@
       </ion-item>
     
   
+      <button ion-button icon-only (click)="backToHome()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </button>
       <button ion-button color="danger" id="b_validerInscrip" round (click)="validateInscript()">Valider</button>
       </ion-list>
 </ion-content>
