@@ -21,6 +21,7 @@ import { CollectService } from '../services/DonationServices/CollectsSerice';
 import { UserService } from '../services/DonationServices/UserService';
 import { HttpClientModule } from '@angular/common/http';
 import { Config } from '../dataHoldersService/config';
+import { Toast } from '@ionic-native/toast';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { Config } from '../dataHoldersService/config';
     CollectService,
     UserService,
     Config,
+    Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
