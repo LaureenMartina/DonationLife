@@ -9,7 +9,7 @@ export class User{
     lastname: String;
     email: String;
     password: String;
-    age: Number;
+    age: number;
     gender: String;
     phone: String;
     address: String;

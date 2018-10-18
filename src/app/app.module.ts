@@ -19,10 +19,11 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 // Services
 import { AuthentificationService } from '../services/DonationServices/AuthentificationService';
-import { CollectService } from '../services/DonationServices/CollectsSerice';
+import { CollectService } from '../services/DonationServices/CollectsService';
 import { UserService } from '../services/DonationServices/UserService';
 import { HttpClientModule } from '@angular/common/http';
 import { Config } from '../dataHoldersService/config';
+import { DataService } from '../services/dataService';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { Config } from '../dataHoldersService/config';
     CollectService,
     UserService,
     Config,
+    DataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
