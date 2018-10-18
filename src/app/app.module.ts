@@ -14,6 +14,13 @@ import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// Services
+import { AuthentificationService } from '../services/DonationServices/AuthentificationService';
+import { CollectService } from '../services/DonationServices/CollectsSerice';
+import { UserService } from '../services/DonationServices/UserService';
+import { HttpClientModule } from '@angular/common/http';
+import { Config } from '../dataHoldersService/config';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -43,6 +51,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthentificationService,
+    CollectService,
+    UserService,
+    Config,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
