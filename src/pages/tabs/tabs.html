@@ -1,8 +1,14 @@
-<ion-tabs>
-  <ion-tab class=".tab" [root]="tab1Root" tabIcon="home"></ion-tab>
-  <ion-tab class=".tab" [root]="tab2Root" tabIcon="information-circle"></ion-tab>
-  <ion-tab class=".tab" [root]="tab3Root" tabIcon="person"></ion-tab>
-  <ion-tab class=".tab" [root]="tab4Root" tabIcon="calendar"></ion-tab>
-  <ion-tab class=".tab" [root]="tab5Root" tabIcon="pin"></ion-tab>
-  <ion-tab class=".tab" [root]="tab6Root" tabIcon="log-out"></ion-tab>
+<ion-tabs id="tabbar">
+  
+  <!--{{isSelected = (tab ? true : false;""}}-->
+  <ion-tab id="home" [root]="tab1Root" tabIcon="home" ng-if="isSelected"></ion-tab>
+  <ion-tab id="info" [root]="tab2Root" tabIcon="information-circle" ng-if="isSelected"></ion-tab>
+  <ion-tab id="calendar" [root]="tab4Root" tabIcon="calendar" ng-if="isSelected"></ion-tab>
+  <ion-tab id="gps" [root]="tab5Root" tabIcon="pin" ng-if="isSelected"></ion-tab>
+  <ion-tab id="gps" [root]="tab6Root" tabIcon="arrow-dropright" ng-if="isSelected"></ion-tab>
+
+  <!-- Autres tabs à activer si on clique sur icon fleche suivant -->
+  <ion-tab id="gps" [root]="tab6Root" tabIcon="arrow-dropleft" ng-if="isSelected"></ion-tab>
+  <ion-tab id="logout" [root]="tab7Root" tabIcon="log-out" ng-if="isSelected"></ion-tab>
+
 </ion-tabs>

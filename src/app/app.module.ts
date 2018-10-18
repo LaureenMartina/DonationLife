@@ -4,31 +4,41 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InscriptPage } from '../pages/inscript/inscript';
 import { InformModalPage } from '../pages/inform-modal/inform-modal';
 import { LoginPage } from '../pages/login/login';
 import { MapsPage } from '../pages/maps/maps';
+import { ConnexionPage } from '../pages/connexion/connexion';
+import { ErrorModalPage } from '../pages/error-modal/error-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
 
+// Services
+import { AuthentificationService } from '../services/DonationServices/AuthentificationService';
+import { CollectService } from '../services/DonationServices/CollectsSerice';
+import { UserService } from '../services/DonationServices/UserService';
+import { HttpClientModule } from '@angular/common/http';
+import { Config } from '../dataHoldersService/config';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     InscriptPage,
+    ConnexionPage,
     InformModalPage,
     LoginPage,
-    MapsPage
+    MapsPage,
+    ErrorModalPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -36,18 +46,23 @@ import { Geolocation } from '@ionic-native/geolocation';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     InscriptPage,
+    ConnexionPage,
     InformModalPage,
     LoginPage,
-    MapsPage
+    MapsPage,
+    ErrorModalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
+    AuthentificationService,
+    CollectService,
+    UserService,
+    Config,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

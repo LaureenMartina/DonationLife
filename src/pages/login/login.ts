@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { InscriptPage } from '../inscript/inscript';
+import { ConnexionPage } from '../connexion/connexion';
 
 @Component({
   selector: 'page-login',
@@ -14,7 +15,7 @@ export class LoginPage {
   }
 
   private clickConnexion() {
-    //this.navCtrl.push(ConnexionPage);
+    this.navCtrl.push(ConnexionPage);
   }
 
   private clickInscrip() {
