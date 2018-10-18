@@ -21,9 +21,9 @@ export class HomePage {
     this.navCtrl.push(LoginPage);
   }
 
-  onPageDidEnter() {
+  /*onPageDidEnter() {
     this.tabBarElement.style.display = "none";
-  }
+  }*/
 
   showText(){
     let infoModal = this.modalCtrl.create(InformModalPage, { userId: 8675309 });

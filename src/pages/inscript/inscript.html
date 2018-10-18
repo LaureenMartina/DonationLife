@@ -29,12 +29,12 @@
       </ion-item>
 
       <ion-item>
-          <ion-label>Mois</ion-label>
+          <!--<ion-label>Mois</ion-label>
           <ion-select [(ngModel)]="monthSelected">
             <span *ngFor="let month of ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']">
               <ion-option value="{{month}}">{{month}}</ion-option>
             </span>
-          </ion-select>
+          </ion-select>-->
           <ion-label>Année</ion-label>
           <ion-select [(ngModel)]="yearSelected">
               <ion-option *ngFor="let year of years" value="{{year}}">{{year}}</ion-option>
