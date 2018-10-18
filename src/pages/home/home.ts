@@ -26,7 +26,7 @@ export class HomePage {
   }
 
   showText(){
-    let infoModal = this.modalCtrl.create(InformModalPage);
+    let infoModal = this.modalCtrl.create(InformModalPage, { userId: 8675309 });
     infoModal.present();
   }
 }
