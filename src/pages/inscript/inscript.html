@@ -2,38 +2,41 @@
   <ion-list>
       <ion-item>
         <ion-label fixed>Prénom</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input [(ngModel)]="firtsname" type="text" value=""></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Nom</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="lastname" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Email</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Mot de Passe</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Confirmation MDP</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-label fixed>Confirmation</ion-label>
+        <ion-input [(ngModel)]="confirmPassword" type="password"></ion-input>
       </ion-item>
 
-      <!-- A modifier -->
       <ion-item>
+          <ion-label>Mois</ion-label>
+          <ion-select [(ngModel)]="monthSelected">
+            <span *ngFor="let month of ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']">
+              <ion-option value="{{month}}">{{month}}</ion-option>
+            </span>
+          </ion-select>
           <ion-label>Année</ion-label>
-          <ion-select [(ngModel)]="gender">
-              <ion-option value="f">Femme</ion-option>
-              <ion-option value="m">Masculin</ion-option>
-            </ion-select>
+          <ion-select [(ngModel)]="yearSelected">
+              <ion-option *ngFor="let year of years" value="{{year}}">{{year}}</ion-option>
+          </ion-select>
       </ion-item>
-      <!-- A modifier -->
 
       <ion-item>
         <ion-label>Genre</ion-label>
@@ -45,29 +48,31 @@
 
       <ion-item>
         <ion-label fixed>Téléphone</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="phoneNumber" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Adresse</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="address" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Groupe Sanguin</ion-label>
-        <ion-select [(ngModel)]="groupBlood" multiple="true">
+        <ion-select [(ngModel)]="groupBlood">
           <ion-option>A-</ion-option>
           <ion-option>A+</ion-option>
           <ion-option>B-</ion-option>
           <ion-option>B+</ion-option>
-          <ion-option>0</ion-option>
-          <ion-option>AB</ion-option>
+          <ion-option>O-</ion-option>
+          <ion-option>O+</ion-option>
+          <ion-option>AB-</ion-option>
+          <ion-option>AB+</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
         <ion-label>Orientation Sexuelle</ion-label>
-        <ion-select [(ngModel)]="sexuelOrientation" multiple="true">
+        <ion-select [(ngModel)]="sexuelOrientation">
           <ion-option>Hétérosexuel</ion-option>
           <ion-option>Homosexuel</ion-option>
           <ion-option>Bisexuel</ion-option>

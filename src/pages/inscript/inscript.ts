@@ -7,8 +7,24 @@ import { NavController } from 'ionic-angular';
 })
 export class InscriptPage {
 
-  constructor(public navCtrl: NavController) {
+  firtsname : String;
+  lastname : String;
+  email : String;
+  password : String;
+  confirmPassword : String;
+  monthSelected : String;
+  yearSelected : number;
+  gender : String;
+  phoneNumber : String;
+  address : String;
+  groupBlood: String;
+  sexuelOrientation : String;
 
+  // inject Years on view
+  years : number[] = (new Array(80).fill(0).map((item, index) => new Date().getFullYear() - index).filter(year => new Date().getFullYear() - year >= 18));
+
+  constructor(public navCtrl: NavController) {
+  
   }
 
   validateInscript() {

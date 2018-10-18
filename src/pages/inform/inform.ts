@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 
@@ -13,8 +13,9 @@ export class InformPage {
 
   }
 
-  private backToHome() {
+  /*private backToHome() {
     this.navCtrl.push(HomePage);
-  }
+  }*/
+
 
 }
