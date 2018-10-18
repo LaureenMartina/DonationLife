@@ -18,6 +18,14 @@ import { ProfilPage } from '../pages/profil/profil';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// Services
+import { AuthentificationService } from '../services/DonationServices/AuthentificationService';
+import { CollectService } from '../services/DonationServices/CollectsSerice';
+import { UserService } from '../services/DonationServices/UserService';
+import { HttpClientModule } from '@angular/common/http';
+import { Config } from '../dataHoldersService/config';
+import { Toast } from '@ionic-native/toast';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -33,6 +41,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfilPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -53,6 +62,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthentificationService,
+    CollectService,
+    UserService,
+    Config,
+    Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

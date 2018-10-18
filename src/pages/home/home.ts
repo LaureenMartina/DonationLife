@@ -13,8 +13,10 @@ export class HomePage {
 
   tabBarElement: HTMLElement;
 
-  constructor(public navCtrl: NavController, private statusBar: StatusBar, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, private statusBar: StatusBar, public modalCtrl: ModalController, param: NavParams) {
     this.tabBarElement = document.querySelector('ion-tabs');
+    console.log(param.get("data"));
+    console.log(param.get("error"));
   }
 
   becompeVolunteer() {
