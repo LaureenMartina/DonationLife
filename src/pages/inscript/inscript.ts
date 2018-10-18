@@ -5,6 +5,7 @@ import { ErrorResponse } from '../../dataHoldersService/ErrorResponse';
 import { AuthentificationService } from '../../services/DonationServices/AuthentificationService';
 import { User } from '../../dataHoldersService/DonationData/user/User';
 import { HomePage } from '../home/home';
+import { Toast } from '@ionic-native/toast';
 
 @Component({
   selector: 'page-inscript',
@@ -31,7 +32,7 @@ export class InscriptPage {
   data: DataResponse;
   error : ErrorResponse;
 
-  constructor(public navCtrl: NavController, private auth: AuthentificationService) {
+  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private toast: Toast) {
   
   }
 
@@ -51,7 +52,7 @@ export class InscriptPage {
     if (user.address) {
 
     }
-    this.auth.register(user)
+    this.authSrv.register(user)
         .then(fetched => {
           this.data = fetched;
           console.log(this.data);
@@ -60,7 +61,11 @@ export class InscriptPage {
         .catch( error => {
           this.error = error;
           console.error(this.error);
-          //this.navCtrl.push(HomePage, {error: this.error});
+          this.toast.show(`Certain(s) champ(s) sont incorrecte(s)`, '5000', 'center').subscribe(
+            toast => {
+              console.log(toast);
+            }
+          );
         });
   }
 
