@@ -3,7 +3,7 @@ import { NavController, ModalController, ViewController, NavParams } from 'ionic
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { LoginPage } from '../login/login';
-import { InformPage } from '../inform/inform';
+import { InformModalPage } from '../inform-modal/inform-modal';
 
 @Component({
   selector: 'page-home',
@@ -13,45 +13,22 @@ export class HomePage {
 
   tabBarElement: HTMLElement;
 
-  constructor(public navCtrl: NavController, private statusBar: StatusBar, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, private statusBar: StatusBar, public modalCtrl: ModalController, param: NavParams) {
     this.tabBarElement = document.querySelector('ion-tabs');
+    console.log(param.get("data"));
+    console.log(param.get("error"));
   }
 
   becompeVolunteer() {
     this.navCtrl.push(LoginPage);
   }
 
-  /*showDetails() {
-    this.navCtrl.push(InformPage);
-  }*/
-
-
   onPageDidEnter() {
     this.tabBarElement.style.display = "none";
   }
 
-  /*showText() {
-    let infoModal = this.modalCtrl.create(InformModal);
+  showText(){
+    let infoModal = this.modalCtrl.create(InformModalPage, { userId: 8675309 });
     infoModal.present();
-  }*/
+  }
 }
-
-/*@Component({
-  template: `
-    <p>bla bla bla</p>
-    <button ion-button clear id="b_back">Back</button>
-  `
-})
-export class InformModal {
-
-  constructor(params: NavParams) {
-    console.log('UserId');
-  }
-
-  ionViewDidLoad() {
-    console.log("I'm alive!");
-  }
-  ionViewWillLeave() {
-    console.log("Looks like I'm about to leave :(");
-  }
-}*/

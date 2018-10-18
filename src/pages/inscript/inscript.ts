@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { UserService } from '../../services/DonationServices/UserService';
 import { DataResponse } from '../../dataHoldersService/DataResponse';
 import { ErrorResponse } from '../../dataHoldersService/ErrorResponse';
 import { AuthentificationService } from '../../services/DonationServices/AuthentificationService';
 import { User } from '../../dataHoldersService/DonationData/user/User';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-inscript',
@@ -27,27 +27,41 @@ export class InscriptPage {
 
   // inject Years on view
   years : number[] = (new Array(80).fill(0).map((item, index) => new Date().getFullYear() - index).filter(year => new Date().getFullYear() - year >= 18));
-
   // Data From Services
   data: DataResponse;
   error : ErrorResponse;
-  token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiI1YmM3YWNjNGU3NDAzMjRjMDQ3NzlkZmIiLCJpYXQiOjE1Mzk4NzE0NjYsImV4cCI6MTUzOTg3NTA2Nn0.RdPmUhnaCSatl_e2rUzgD87NmDwR0TmaW55iecvXlcQ";
-    
-  constructor(public navCtrl: NavController, private userSrv: AuthentificationService) {
+
+  constructor(public navCtrl: NavController, private auth: AuthentificationService) {
   
   }
 
   validateInscript() {
     var user =  new User();
-    user.email = "toto@gmail.com";
-    user.password = "toto";
+    user.email = this.email;
+    user.address = this.address;
+    let current = new Date();
+    user.age = current.getFullYear() - this.yearSelected;
+    user.bloodType = this.groupBlood;
+    user.firstname =this.firtsname;
+    user.gender = this.gender;
+    user.lastname = this.lastname;
+    user.phone = this.phoneNumber;
+    user.sexualOrientation = this.sexuelOrientation;
+    user.password = this.password;
+    if (user.address) {
 
-    this.userSrv.register(user)
+    }
+    this.auth.register(user)
         .then(fetched => {
           this.data = fetched;
           console.log(this.data);
+          this.navCtrl.push(HomePage, {token: this.data.data.token});
         })
-        .catch( error => this.error = this.error);
+        .catch( error => {
+          this.error = error;
+          console.error(this.error);
+          //this.navCtrl.push(HomePage, {error: this.error});
+        });
   }
 
 }

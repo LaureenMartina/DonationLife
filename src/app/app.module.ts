@@ -4,12 +4,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InscriptPage } from '../pages/inscript/inscript';
-import { InformPage } from '../pages/inform/inform';
+import { InformModalPage } from '../pages/inform-modal/inform-modal';
 import { LoginPage } from '../pages/login/login';
+import { ConnexionPage } from '../pages/connexion/connexion';
+import { ErrorModalPage } from '../pages/error-modal/error-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,12 +26,13 @@ import { Config } from '../dataHoldersService/config';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     InscriptPage,
-    InformPage,
-    LoginPage
+    ConnexionPage,
+    InformModalPage,
+    LoginPage,
+    ErrorModalPage
   ],
   imports: [
     HttpClientModule,
@@ -41,12 +43,13 @@ import { Config } from '../dataHoldersService/config';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     InscriptPage,
-    InformPage,
-    LoginPage
+    ConnexionPage,
+    InformModalPage,
+    LoginPage,
+    ErrorModalPage
   ],
   providers: [
     StatusBar,
