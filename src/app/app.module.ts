@@ -14,7 +14,6 @@ import { ConnexionPage } from '../pages/connexion/connexion';
 import { ErrorModalPage } from '../pages/error-modal/error-modal';
 import { LocationPage } from '../pages/location/location';
 import { ProfilPage } from '../pages/profil/profil';
-import { LogoutPage } from '../pages/logout/logout';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,8 +37,7 @@ import { Config } from '../dataHoldersService/config';
     LoginPage,
     ErrorModalPage,
     LocationPage,
-    ProfilPage,
-    LogoutPage
+    ProfilPage
   ],
   imports: [
     HttpClientModule,
@@ -58,8 +56,7 @@ import { Config } from '../dataHoldersService/config';
     LoginPage,
     ErrorModalPage,
     LocationPage,
-    ProfilPage,
-    LogoutPage
+    ProfilPage
   ],
   providers: [
     StatusBar,
