@@ -4,18 +4,18 @@ import { NavController} from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 @Component({
-  selector: 'page-inform',
-  templateUrl: 'inform.html'
+  selector: 'page-inform-modal',
+  templateUrl: 'inform-modal.html'
 })
-export class InformPage {
+export class InformModalPage {
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  /*private backToHome() {
+  private backToHome() {
     this.navCtrl.push(HomePage);
-  }*/
+  }
 
 
 }

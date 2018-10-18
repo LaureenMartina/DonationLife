@@ -8,7 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InscriptPage } from '../pages/inscript/inscript';
-import { InformPage } from '../pages/inform/inform';
+import { InformModalPage } from '../pages/inform-modal/inform-modal';
 import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     InscriptPage,
-    InformPage,
+    InformModalPage,
     LoginPage
   ],
   imports: [
@@ -37,7 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     InscriptPage,
-    InformPage,
+    InformModalPage,
     LoginPage
   ],
   providers: [
