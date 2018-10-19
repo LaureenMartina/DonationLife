@@ -5,6 +5,7 @@ import { UserService } from './../../services/DonationServices/UserService';
 import { Collect } from './../../dataHoldersService/DonationData/Collect/Collect';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-location',
@@ -16,6 +17,9 @@ export class LocationPage {
   myLocation: Collect;
 
   constructor(public navCtrl: NavController, private collectService: CollectService, public dataHolder: DataHolder) {
+    if (!this.dataHolder.token){
+      this.navCtrl.push(LoginPage);
+    }
     this.collectService.near(this.dataHolder.token)
       .then(response => {
         console.log("okCollect", response);
@@ -39,6 +43,7 @@ export class LocationPage {
       .catch(e => {
         console.log("error", e);
       });
+
   }
 
   searchGPS(event) {

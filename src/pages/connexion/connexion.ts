@@ -1,13 +1,14 @@
 import { DataHolder } from './../../dataHoldersService/DataHolder';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, AlertController} from 'ionic-angular';
 import { Toast} from '@ionic-native/toast';
 import { HomePage } from '../home/home';
 import { AuthentificationService } from '../../services/DonationServices/AuthentificationService';
 import { DataResponse } from '../../dataHoldersService/DataResponse';
 import { ErrorResponse } from '../../dataHoldersService/ErrorResponse';
 import { User } from '../../dataHoldersService/DonationData/user/User';
+import { ProfilPage } from '../profil/profil';
 
 @Component({
   selector: 'page-connexion',
@@ -20,8 +21,10 @@ export class ConnexionPage {
   dataResponse : DataResponse;
   errorResponse : ErrorResponse;
 
-  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private toast: Toast, public dataHolder: DataHolder) {
-  
+  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private alertCtrl: AlertController, public dataHolder: DataHolder) {
+    if (this.dataHolder.token){
+      this.navCtrl.push(ProfilPage);
+    }
   }
 
   validateConnexion() {
@@ -40,16 +43,21 @@ export class ConnexionPage {
       })
       .catch( error => {
         this.errorResponse = error;
-        this.toast.show(`Impossible de vous connecter`, '5000', 'center').subscribe(
-          toast => {
-            console.log(toast);
-          }
-        );
+        this.presentAlert();
       });
   }
 
   backToHome() {
     this.navCtrl.push(LoginPage);
+  }
+
+  private presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Mauvaise saisie',
+      subTitle: 'Email ou mot de passe incorrect',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

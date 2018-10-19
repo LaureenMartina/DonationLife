@@ -22,7 +22,7 @@ export class TabsPage {
   tab5Root = LocationPage;
 
   constructor() {
-
+      
   }
 
   logout(){

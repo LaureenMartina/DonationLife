@@ -15,7 +15,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private statusBar: StatusBar, public modalCtrl: ModalController, param: NavParams) {
     this.tabBarElement = document.querySelector('ion-tabs');
-    console.log(param.get("token"));
   }
 
   becompeVolunteer() {
