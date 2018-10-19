@@ -26,7 +26,7 @@ export class AuthentificationService{
     } 
 
 
-    public register(user: User) : Promise<DataResponse> {
+    public register(user: User) : Promise<any> {
         return new Promise((resolve , reject) => {
             this.http.post(`${this.config.url}/authentication/register`, {user})
             .subscribe(

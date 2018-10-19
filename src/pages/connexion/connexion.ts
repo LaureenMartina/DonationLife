@@ -1,3 +1,5 @@
+import { DataHolder } from './../../dataHoldersService/DataHolder';
+import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { Toast} from '@ionic-native/toast';
@@ -18,7 +20,7 @@ export class ConnexionPage {
   dataResponse : DataResponse;
   errorResponse : ErrorResponse;
 
-  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private toast: Toast) {
+  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private toast: Toast, public dataHolder: DataHolder) {
   
   }
 
@@ -27,11 +29,14 @@ export class ConnexionPage {
     var user = new User();
     user.password = this.password;
     user.email = this.email;
-
+    console.log(user);
     this.authSrv.sign(user)
       .then( response => {
+        console.log(user.email);
         this.dataResponse = response;
-        this.navCtrl.push(HomePage, {token : this.dataResponse.data.token});
+        this.navCtrl.push(HomePage);
+        this.dataHolder.token = this.dataResponse.data.token;
+        console.log(this.dataHolder);
       })
       .catch( error => {
         this.errorResponse = error;
@@ -44,7 +49,7 @@ export class ConnexionPage {
   }
 
   backToHome() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(LoginPage);
   }
 
 }

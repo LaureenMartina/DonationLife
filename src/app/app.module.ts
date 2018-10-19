@@ -1,3 +1,4 @@
+import { DataHolder } from './../dataHoldersService/DataHolder';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -76,6 +77,7 @@ import { DataService } from '../services/dataService';
     DataService,
     Toast,
     InAppBrowser,
+    DataHolder,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

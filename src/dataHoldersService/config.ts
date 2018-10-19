@@ -1,3 +1,3 @@
 export class Config{
-    url: string = "https://3edced79.ngrok.io";
+    url: string = "https://9b3c1dab.ngrok.io";
 }
