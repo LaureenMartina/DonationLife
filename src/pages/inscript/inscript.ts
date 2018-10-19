@@ -1,3 +1,4 @@
+import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DataResponse } from '../../dataHoldersService/DataResponse';
@@ -61,16 +62,16 @@ export class InscriptPage {
         .catch( error => {
           this.error = error;
           console.error(this.error);
-          this.toast.show(`Certain(s) champ(s) sont incorrecte(s)`, '5000', 'center').subscribe(
-            toast => {
-              console.log(toast);
-            }
-          );
+          // this.toast.show(`Certain(s) champ(s) sont incorrecte(s)`, '5000', 'center').subscribe(
+          //   toast => {
+          //     console.log(toast);
+          //   }
+          // );
         });
   }
 
   backToHome() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(LoginPage);
   }
 
 }
