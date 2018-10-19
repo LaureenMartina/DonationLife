@@ -53,16 +53,11 @@ export class MapsPage {
       minZoom: 4
     }).on('locationfound', (location) => {
       let marker: any;
-
-      console.log(location);
-      //TODO:remove
-      leaflet.marker([location.latitude, location.longitude]).addTo(this.map);
-
       this.collectService.getCollects({ latitude: location.latitude, longitude: location.longitude })
         .then((collects: Array<Collect>) => {
-          collects.forEach((collect: Collect, index: number) => {
-            marker = leaflet.marker(collect.latitude, collect.longitude).on('click', () => {
-              // TODO: markers onClick
+          collects.forEach((collect: Collect) => {
+            marker = leaflet.marker([collect.latitude, collect.longitude]).on('click', () => {
+              marker.bindPopup(collect.name).openPopup();
             });
             marker.addTo(this.map);
           });
