@@ -13,7 +13,6 @@ import { LoginPage } from '../pages/login/login';
 import { MapsPage } from '../pages/maps/maps';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { ErrorModalPage } from '../pages/error-modal/error-modal';
-import { LocationPage } from '../pages/location/location';
 import { ProfilPage } from '../pages/profil/profil';
 import { CalendarComponent } from '../components/calendar/calendar';
 
@@ -43,7 +42,6 @@ import { DataService } from '../services/dataService';
     LoginPage,
     MapsPage,
     ErrorModalPage,
-    LocationPage,
     ProfilPage,
     CalendarComponent
   ],
@@ -64,7 +62,6 @@ import { DataService } from '../services/dataService';
     LoginPage,
     MapsPage,
     ErrorModalPage,
-    LocationPage,
     ProfilPage,
     CalendarComponent
   ],
