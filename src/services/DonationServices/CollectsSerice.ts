@@ -17,12 +17,40 @@ export class CollectService{
     public near(token : String) : Promise<any>{
 
         const header = new HttpHeaders({ "x-access-token": token as string });
+
         return new Promise((resolve , reject) => {
-            this.http.get(`${this.config.url}/collects/near`, { headers: header })
+            this.http.get("http://api.ipstack.com/check?access_key=ffccedd4a2b191cd0eb492140ffbd84a")
+            .subscribe(
+                (item: any) => {
+                    console.log(item);
+                    this.http.post(`${this.config.url}/collects/current/near`, { 
+                        collect: {
+                            latitude: item.latitude,
+                            longitude: item.longitude
+                        }
+                    }, { headers: header })
+                    .subscribe(
+                        (item: any) => resolve(item as DataResponse),
+                        (err: any) => reject(err as ErrorResponse)
+                    );
+                },
+                (err: any) => reject(err as ErrorResponse)
+            );
+
+        });
+    } 
+
+    public current(token : String) : Promise<any>{
+
+        const header = new HttpHeaders({ "x-access-token": token as string });
+
+        return new Promise((resolve , reject) => {
+            this.http.get("http://api.ipstack.com/check?access_key=ffccedd4a2b191cd0eb492140ffbd84a")
             .subscribe(
                 (item: any) => resolve(item as DataResponse),
                 (err: any) => reject(err as ErrorResponse)
             );
+
         });
     } 
 }

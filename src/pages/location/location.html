@@ -1,8 +1,17 @@
-<ion-content class="card-background-page" *ngFor="let event of events">
-    <ion-card>
-        <img src="{{event.image}}"/>
-        <div class="card-title">{{event.location}}</div>
-        <div class="card-subtitle">{{event.subtitle}}</div>
-        <button ion-button color="danger" (click)="searchGPS()" round>Voir Carte</button>
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Localiser Centres de Donation
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+    <ion-card *ngFor="let event of events">
+        <img src="../assets/imgs/wall4.png"/>
+        <div class="card-title">{{event.latitude}} / {{event.longitude}}</div>
+        <div class="card-title">Environ à {{event.distance / 1000}} km de vous</div>
+        <div class="card-subtitle">{{event.name}}</div>
+        <button ion-button color="danger" (click)="searchGPS(event)" round>Voir Carte</button>
     </ion-card>
 </ion-content>

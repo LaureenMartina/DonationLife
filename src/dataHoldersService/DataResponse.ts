@@ -1,3 +1,4 @@
+import { Collect } from './DonationData/Collect/Collect';
 import {Allergen} from "./DonationData/allergen/Allergen";
 import {Vaccine} from "./DonationData/Vaccines/Vaccine";
 import {MedicalForm} from "./DonationData/medicalForm/MedicalForm";
@@ -9,9 +10,11 @@ export class DataResponse{
         vaccine: Vaccine,
         medicalForm: MedicalForm,
         user: User,
+        collect: Collect,
         allergens: Allergen[],
         vaccines: Vaccine[],
         medicalForms: MedicalForm[],
-        users: User[]
+        users: User[],
+        collects: Collect[]
     }
 }
