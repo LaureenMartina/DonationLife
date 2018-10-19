@@ -1,8 +1,10 @@
 import { Collect } from './../../dataHoldersService/DonationData/Collect/Collect';
 import { CollectService } from './../../services/DonationServices/CollectsSerice';
-import { DataHolder } from './../../dataHoldersService/DataHolder';
+import { DataHolder} from './../../dataHoldersService/DataHolder';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
+declare var googleApi;
 
 @Component({
   selector: 'page-maps',
