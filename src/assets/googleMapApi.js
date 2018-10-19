@@ -1,5 +1,9 @@
 console.log("script map");
 
+function googleApi() {
+    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAALkKv3-jjc88zn9dD6hGheGkZ21xW_9o&callback=initMap");
+}
+
 function initMap() {
     var el = document.getElementById("dataMap").textContent;
     console.log(JSON.parse(el));
@@ -11,7 +15,7 @@ function initMap() {
 
     var locations = [
             ["Position actuelle proximative", myElem.latitude, myElem.longitude, 1],
-            [myElem.name, myElem.latitude, myElem.longitude, 2]
+            [el.name, el.latitude, el.longitude, 2]
         ];
 
     console.log("locations", locations);
@@ -37,4 +41,11 @@ function initMap() {
             }
         })(marker, i));
     }
+}
+
+function loadScript(url) {
+    let node = document.createElement('script');
+    node.src = url;
+    node.type = 'text/javascript';
+    document.getElementsByTagName('head')[0].appendChild(node);
 }

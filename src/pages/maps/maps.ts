@@ -36,7 +36,6 @@ export class MapsPage {
     }
 
     public ngOnInit() {
-        this.loadScript("googleMapApi.js");
-        this.loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAALkKv3-jjc88zn9dD6hGheGkZ21xW_9o&callback=initMap");
+        googleApi();
     }
 }
