@@ -1,3 +1,4 @@
+import { LocationPage } from './../location/location';
 import { Collect } from './../../dataHoldersService/DonationData/Collect/Collect';
 import { CollectService } from './../../services/DonationServices/CollectsSerice';
 import { DataHolder} from './../../dataHoldersService/DataHolder';
@@ -40,4 +41,8 @@ export class MapsPage {
     public ngOnInit() {
         googleApi();
     }
+
+    backToHome() {
+        this.navCtrl.push(LocationPage);
+      }
 }
