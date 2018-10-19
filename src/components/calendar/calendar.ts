@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { InAppBrowser , InAppBrowserOptions } from '@ionic-native/in-app-browser';
+import { NavController } from 'ionic-angular';
+import { DataHolder } from '../../dataHoldersService/DataHolder';
+import { LoginPage } from '../../pages/login/login';
 
 /**
  * Generated class for the CalendarComponent component.
@@ -13,6 +16,7 @@ import { InAppBrowser , InAppBrowserOptions } from '@ionic-native/in-app-browser
 })
 
 export class CalendarComponent {
+
 
   text: string;
   options: InAppBrowserOptions = {
@@ -39,21 +43,16 @@ export class CalendarComponent {
   chosenHours: number;
   chosenMinutes: number;
 
-  constructor(private theInAppBrowser: InAppBrowser) {
+  constructor(private theInAppBrowser: InAppBrowser, private navCtrl: NavController, public dataHolder: DataHolder) {
+    if (!this.dataHolder.token) {
+      this.navCtrl.push(LoginPage);
+    }
     console.log('Hello CalendarComponent Component');
     this.text = 'Hello World';
   }
 
   public openWithSystemBrowser(url: string) {
     let target = "_system";
-    this.theInAppBrowser.create(url, target, this.options);
-  }
-  public openWithInAppBrowser(url: string) {
-    let target = "_blank";
-    this.theInAppBrowser.create(url, target, this.options);
-  }
-  public openWithCordovaBrowser(url: string) {
-    let target = "_self";
     this.theInAppBrowser.create(url, target, this.options);
   }
 

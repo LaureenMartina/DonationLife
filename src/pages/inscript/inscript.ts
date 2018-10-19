@@ -1,12 +1,13 @@
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { DataResponse } from '../../dataHoldersService/DataResponse';
 import { ErrorResponse } from '../../dataHoldersService/ErrorResponse';
 import { AuthentificationService } from '../../services/DonationServices/AuthentificationService';
 import { User } from '../../dataHoldersService/DonationData/user/User';
 import { HomePage } from '../home/home';
 import { Toast } from '@ionic-native/toast';
+import { DataHolder } from '../../dataHoldersService/DataHolder';
 
 @Component({
   selector: 'page-inscript',
@@ -33,8 +34,10 @@ export class InscriptPage {
   data: DataResponse;
   error : ErrorResponse;
 
-  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private toast: Toast) {
-  
+  constructor(public navCtrl: NavController, private authSrv: AuthentificationService, private alertCtrl: AlertController, public dataHolder: DataHolder) {
+    if (this.dataHolder.token) {
+      this.navCtrl.push(HomePage);
+    }
   }
 
   validateInscript() {
@@ -62,16 +65,21 @@ export class InscriptPage {
         .catch( error => {
           this.error = error;
           console.error(this.error);
-          // this.toast.show(`Certain(s) champ(s) sont incorrecte(s)`, '5000', 'center').subscribe(
-          //   toast => {
-          //     console.log(toast);
-          //   }
-          // );
+          this.presentAlert();
         });
   }
 
   backToHome() {
     this.navCtrl.push(LoginPage);
+  }
+
+  private presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Mauvaise saisie',
+      subTitle: 'Certains champs sont incorrects',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

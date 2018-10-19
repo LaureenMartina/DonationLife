@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { InscriptPage } from '../inscript/inscript';
 import { ConnexionPage } from '../connexion/connexion';
+import { DataHolder } from '../../dataHoldersService/DataHolder';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-login',
@@ -10,8 +12,10 @@ import { ConnexionPage } from '../connexion/connexion';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public dataHolder: DataHolder) {
+    if (this.dataHolder.token) {
+      this.navCtrl.push(HomePage);
+    }
   }
 
   private clickConnexion() {
