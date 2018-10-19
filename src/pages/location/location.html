@@ -1,8 +1,0 @@
-<ion-content class="card-background-page" *ngFor="let event of events">
-    <ion-card>
-        <img src="{{event.image}}"/>
-        <div class="card-title">{{event.location}}</div>
-        <div class="card-subtitle">{{event.subtitle}}</div>
-        <button ion-button color="danger" (click)="searchGPS()" round>Voir Carte</button>
-    </ion-card>
-</ion-content>

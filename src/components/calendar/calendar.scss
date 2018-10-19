@@ -1,0 +1,35 @@
+calendar {
+    #head{
+        width: 100%;
+        height: 80%;
+        padding: 0;
+        background-image: url("../assets/imgs/wall4.png");
+        background-size: contain;
+        border-radius: 20px;
+        padding-bottom: 10%;
+        padding-top: 10%;
+
+        #cal {
+            display: block;
+            margin: auto;
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            border-radius: 50%;
+        }
+    }
+
+    #link {
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(54, 151, 119) !important;
+        box-shadow: 0px 5px 5px black;
+    }
+
+    #text {
+        text-align: center;
+    }
+}

@@ -11,8 +11,9 @@ export class ProfilPage {
   
   }
 
-  clickGPS() {
-    //this.navCtrl.push(HomePage);
+  deconnexion(){
+    
   }
+
 
 }
